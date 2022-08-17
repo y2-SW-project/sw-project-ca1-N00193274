@@ -9,9 +9,9 @@ class Inventory extends Model
 {
     use HasFactory;
 
-    public function inventories()
+    public function categories()
     {
-        return $this->belongsto('App\Models\Category');
+        return $this->belongsto(Category::class);
     }
 
 }

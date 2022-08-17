@@ -18,10 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('Quantity');
-            $table->string('category');
+            //$table->string('category');
+            $table->bigInteger('category_id')->unsigned();
+           
             $table->timestamps();
 
-            $table->foreign('category')->references('id')->on('categories')->onUpdate('cascade')->onDelete('restrict'); 
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('restrict'); 
         });
     }
 

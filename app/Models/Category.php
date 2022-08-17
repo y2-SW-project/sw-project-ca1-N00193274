@@ -11,6 +11,6 @@ class Category extends Model
 
     public function inventories()
     {
-        return $this->hasmany('App\Models\Inventory');
+        return $this->hasmany(Inventory::class);
     }
 }

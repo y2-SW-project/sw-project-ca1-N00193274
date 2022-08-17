@@ -46,4 +46,25 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Role', 'user_role');
     }
+
+    public function authorizeRoles($roles)
+    {
+        if(is_array($roles)){
+            return $this->hasAnyRole($roles) || 
+            abort(401, 'this action is unathorized');
+        }
+        return $this->hasRole($roles) || 
+        abort(401, 'this action is unathorized');
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return null !== $this->roles()->wherein('name', $roles)->first();
+    }
+
+    public function hasRole($role)
+    {
+        return null !== $this->roles()->where('name', $role)->first();
+    }
+
 }

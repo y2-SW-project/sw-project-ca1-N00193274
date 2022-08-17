@@ -18,8 +18,18 @@ class CategorySeeder extends Seeder
         $category_art = new Category();
         $category_art->name = 'art';
         $category_art->description = 'art related products';
+        $category_art->save();
 
-        
+        $category_jewellery = new Category();
+        $category_jewellery->name = 'jewellery';
+        $category_jewellery->description = 'rings, necklaces etc';
+        $category_jewellery->save();
+
+        $category_clothing = new Category();
+        $category_clothing->name = 'clothing';
+        $category_clothing->description = 'Clothing relaeted products';
+        $category_clothing->save();
+
 
     }
 }

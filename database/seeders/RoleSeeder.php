@@ -30,9 +30,9 @@ class RoleSeeder extends Seeder
         $role_employee->description = 'Business employee';
         $role_employee->save();
 
-        $role_warehouse_staff = new Role();
-        $role_warehouse_staff->name = 'warehouse_staff';
-        $role_warehouse_staff->description = 'warehouse worker';
-        $role_warehouse_staff->save();
+        $role_warehousestaff = new Role();
+        $role_warehousestaff->name = 'warehouse staff';
+        $role_warehousestaff->description = 'warehouse worker';
+        $role_warehousestaff->save();
     }
 }
